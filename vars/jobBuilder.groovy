@@ -52,7 +52,7 @@ spec:
         for (int i = 0; i < gitUrls.size(); i++) {
             String dirName = Utils.getDirName(gitUrls[i]);
             dir(dirName) {
-                 git url: gitUrls[i], credentialsId: 'git_read'
+                 git branch: 'main', git url: gitUrls[i], credentialsId: 'git_read'
                  def yaml = readYaml file: configFile;
                  List<JobConfig> jobConfigs = ConfigParser.populateConfigs(yaml.config, env);
                  jobConfigMap.put(gitUrls[i],jobConfigs);

@@ -117,18 +117,18 @@ spec:
                                  if(env.ALT_REPO_PUSH.equalsIgnoreCase("true")){
                                   String gcr_image = "${GCR_REPO_NAME}/${buildConfig.getImageName()}:${env.BUILD_NUMBER}-${scmVars.BRANCH}-${scmVars.VERSION}-${scmVars.ACTUAL_COMMIT}";
                                   sh """
-									echo \"Attempting to build image,  ${image}\"
-									/kaniko/executor -f \`pwd\`/${buildConfig.getDockerFile()} -c \`pwd\`/${buildConfig.getContext()} \
-									--build-arg WORK_DIR=${workDir} \
-									--build-arg token=\${GIT_ACCESS_TOKEN} \                   
-									--cache=true --cache-dir=/cache \
-									--single-snapshot=true \
-									--snapshotMode=time \
-									--destination=${image} \
-									--destination=${gcr_image} \
-									--no-push=${noPushImage} \
-									--cache-repo=jnkio/cache/cache
-								"""
+                                    echo \"Attempting to build image,  ${image}\"
+                                    /kaniko/executor -f `pwd`/${buildConfig.getDockerFile()} -c `pwd`/${buildConfig.getContext()} \
+                                    --build-arg WORK_DIR=${workDir} \
+                                    --build-arg token=\$GIT_ACCESS_TOKEN \
+                                    --cache=true --cache-dir=/cache \
+                                    --single-snapshot=true \
+                                    --snapshotMode=time \
+                                    --destination=${image} \
+                                    --destination=${gcr_image} \
+                                    --no-push=${noPushImage} \
+                                    --cache-repo=jnkio/cache/cache
+                                  """  
                                   echo "${image} and ${gcr_image} pushed successfully!!"                              
                                 }
                                 else{

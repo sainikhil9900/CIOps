@@ -143,7 +143,8 @@ spec:
                                     --snapshotMode=time \
                                     --destination=${image} \
                                     --no-push=${noPushImage} \
-                                    --cache-repo=jnkio/cache/cache
+                                    --cache-repo=jnkio/cache/cache \
+									--force
                                 """
                                 echo "${image} pushed successfully!"
                                 }                                

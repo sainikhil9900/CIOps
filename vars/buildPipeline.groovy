@@ -127,7 +127,8 @@ spec:
                                     --destination=${image} \
                                     --destination=${gcr_image} \
                                     --no-push=${noPushImage} \
-                                    --cache-repo=jnkio/cache/cache
+                                    --cache-repo=jnkio/cache/cache \
+									--force
                                   """  
                                   echo "${image} and ${gcr_image} pushed successfully!!"                              
                                 }

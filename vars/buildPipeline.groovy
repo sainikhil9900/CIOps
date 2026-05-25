@@ -94,7 +94,10 @@ spec:
 
                 stage('Build with Kaniko') {
                         container('kaniko') {
-
+                            sh '''
+                               echo "INSIDE KANIKO"
+                                ls /kaniko
+                                  '''
                             for(int j=0; j<jobConfig.getBuildConfigs().size(); j++){
                                 BuildConfig buildConfig = jobConfig.getBuildConfigs().get(j)
                                 echo "${buildConfig.getWorkDir()} ${buildConfig.getDockerFile()}"

@@ -147,7 +147,6 @@ spec:
                             }
                         }
                     }
-                }
                 // stage ("Update dashboard") {
                 //         environmentDashboard {
                 //             environmentName(scmVars.BRANCH)  

@@ -93,7 +93,7 @@ spec:
                 }
 
                 stage('Build with Kaniko') {
-                        container(name: 'kaniko') {
+                        container('kaniko') {
 
                             for(int j=0; j<jobConfig.getBuildConfigs().size(); j++){
                                 BuildConfig buildConfig = jobConfig.getBuildConfigs().get(j)

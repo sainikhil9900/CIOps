@@ -17,7 +17,7 @@ spec:
     image: gcr.io/kaniko-project/executor:debug-v0.15.0
     imagePullPolicy: IfNotPresent
     command:
-    - /busybox/cat
+    - cat
     tty: true
     env:
       - name: GIT_ACCESS_TOKEN
@@ -93,9 +93,8 @@ spec:
                 }
 
                 stage('Build with Kaniko') {
-                    withEnv(["PATH=/busybox:/kaniko:$PATH"
-                    ]) {
-                        container(name: 'kaniko', shell: '/busybox/sh') {
+                     {
+                        container(name: 'kaniko') {
 
                             for(int j=0; j<jobConfig.getBuildConfigs().size(); j++){
                                 BuildConfig buildConfig = jobConfig.getBuildConfigs().get(j)

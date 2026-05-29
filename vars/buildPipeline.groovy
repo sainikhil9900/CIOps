@@ -37,10 +37,10 @@ spec:
         mountPath: /cache     
     resources:
       requests:
-        memory: "3000Mi"
+        memory: "4000Mi"
         cpu: "750m"
       limits:
-        memory: "5000Mi"
+        memory: "8000Mi"
         cpu: "1500m"      
   - name: git
     image: docker.io/egovio/builder:2-64da60a1-version_script_update-NA
@@ -141,6 +141,8 @@ spec:
                                     --cache=true --cache-dir=/cache \
                                     --single-snapshot=true \
                                     --snapshotMode=redo \
+                                    --use-new-run \
+                                    --compressed-caching=false \
                                     --destination=${image} \
                                     --no-push=${noPushImage} \
                                     --cache-repo=jnkio/cache/cache

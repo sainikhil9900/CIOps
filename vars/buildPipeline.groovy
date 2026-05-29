@@ -140,7 +140,7 @@ spec:
                                     --build-arg token=\$GIT_ACCESS_TOKEN \
                                     --cache=true --cache-dir=/cache \
                                     --single-snapshot=true \
-                                    --snapshotMode=time \
+                                    --snapshotMode=redo \
                                     --destination=${image} \
                                     --no-push=${noPushImage} \
                                     --cache-repo=jnkio/cache/cache

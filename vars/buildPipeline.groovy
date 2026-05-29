@@ -37,10 +37,10 @@ spec:
         mountPath: /cache     
     resources:
       requests:
-        memory: "1792Mi"
+        memory: "3000Mi"
         cpu: "750m"
       limits:
-        memory: "4080Mi"
+        memory: "5000Mi"
         cpu: "1500m"      
   - name: git
     image: docker.io/egovio/builder:2-64da60a1-version_script_update-NA
